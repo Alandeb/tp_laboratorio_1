@@ -1,0 +1,97 @@
+# depslib dependency file v1.0
+1537978703 source:c:\users\alan_\desktop\programacion\c2018-master\c 2018\tpdos\utn_abm.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	"utn_abm.h"
+
+1537977645 source:c:\users\alan_\desktop\programacion\c2018-master\c 2018\tpdos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	"utn_abm.h"
+
+1537968406 c:\users\alan_\desktop\programacion\c2018-master\c 2018\tpdos\utn_abm.h
+
+1538425364 source:f:\tpdos\utn_abm.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	"utn_abm.h"
+
+1538385148 f:\tpdos\utn_abm.h
+
+1538425530 source:f:\tpdos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	<ctype.h>
+	"utn_abm.h"
+
+1538412907 source:c:\users\alan_\desktop\tpdos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	"utn_abm.h"
+
+1538385146 c:\users\alan_\desktop\tpdos\utn_abm.h
+
+1538412998 source:c:\users\alan_\desktop\tpdos\utn_abm.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	"utn_abm.h"
+
+1538425755 source:c:\users\alumno\downloads\tp_laboratorio_1-master\tpdos-abm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	<ctype.h>
+	"utn_abm.h"
+
+1538425755 c:\users\alumno\downloads\tp_laboratorio_1-master\tpdos-abm\utn_abm.h
+
+1538425755 source:c:\users\alumno\downloads\tp_laboratorio_1-master\tpdos-abm\utn_abm.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	"utn_abm.h"
+
+1538428664 source:c:\users\alan_\desktop\tp_laboratorio_1-master\tp_laboratorio_1-master\tpdos-abm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	<ctype.h>
+	"utn_abm.h"
+
+1538428664 c:\users\alan_\desktop\tp_laboratorio_1-master\tp_laboratorio_1-master\tpdos-abm\utn_abm.h
+
+1538428664 source:c:\users\alan_\desktop\tp_laboratorio_1-master\tp_laboratorio_1-master\tpdos-abm\utn_abm.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	"utn_abm.h"
+
