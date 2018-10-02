@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1536164774 source:c:\users\alan_\desktop\programacion\c2018-master\c 2018\calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	"calculadora.h"
+	<conio.h>
+
+1536164881 source:c:\users\alan_\desktop\programacion\c2018-master\c 2018\calculadora\calculadora.c
+
+1536163419 c:\users\alan_\desktop\programacion\c2018-master\c 2018\calculadora\calculadora.h
+
+1536107164 source:d:\alan debonis\c2018-master\c 2018\calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	"calculadora.h"
+	<conio.h>
+
+1536107164 d:\alan debonis\c2018-master\c 2018\calculadora\calculadora.h
+
+1536110949 source:d:\alan debonis\c2018-master\c 2018\calculadora\calculadora.c
+
+1536699598 source:c:\users\alan_\desktop\c2018-master\c2018-master\c 2018\calculadora\calculadora.c
+
+1536699598 source:c:\users\alan_\desktop\c2018-master\c2018-master\c 2018\calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	"calculadora.h"
+	<conio.h>
+
+1536699598 c:\users\alan_\desktop\c2018-master\c2018-master\c 2018\calculadora\calculadora.h
+
