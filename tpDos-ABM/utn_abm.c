@@ -345,7 +345,7 @@ int utn_getFloat(float *pFlotante, char* msg ,char* msgErr,int min)
         do
         {
             getString(msg,bufferFloatString);
-            if( esNumerico(bufferFloatString))
+            if( esNumericoFlotante(bufferFloatString))
             {
                 bufferFloat = atof (bufferFloatString);
                 if(bufferFloat >= min){
@@ -364,6 +364,33 @@ int utn_getFloat(float *pFlotante, char* msg ,char* msgErr,int min)
     return retorno;
 }
 /**
+ * \brief Verifica si el valor recibido es numérico flotante
+ * \param str Array con la cadena a ser analizada
+ * \return 1 si es númerico y 0 si no lo es
+ *
+ */
+int esNumericoFlotante(char str[])
+{
+   int i=0,flagcoma=0;
+   if(str[i] == '\0')
+        return  0;
+   while(str[i] != '\0')
+   {
+       if(str[i] < '0' || str[i] > '9'){
+            if(str[i]==','||str[i]=='.'){
+                if(flagcoma==1){
+                    return 0;
+                }else
+                    flagcoma=1;
+            }else
+                return 0;
+        }
+
+       i++;
+   }
+   return 1;
+}
+/**
  * \brief Verifica si el valor recibido es numérico
  * \param str Array con la cadena a ser analizada
  * \return 1 si es númerico y 0 si no lo es
@@ -372,9 +399,11 @@ int utn_getFloat(float *pFlotante, char* msg ,char* msgErr,int min)
 int esNumerico(char str[])
 {
    int i=0;
+   if(str[i] == '\0')
+        return 0;
    while(str[i] != '\0')
    {
-       if((str[i] < '0' || str[i] > '9')&&(str[i]!='.')&&(str[i]!=','))
+       if(str[i] < '0' || str[i] > '9')
            return 0;
        i++;
    }
@@ -435,7 +464,7 @@ int esSoloLetras(char str[])
     else{
         while(str[i] != '\0')
         {
-            if((str[i] != ' ') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z')){
+            if((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z')){
                 retorno = 0;
                 break;
             }

@@ -24,6 +24,7 @@ int esSoloLetras(char str[]);
 int getStringLetras(char* msg,char* msgErr,char* pBuffer);
 void getString(char msg[],char* pBuffer);
 int utn_getFloat(float *pFlotante, char* msg ,char* msgErr,int min);
+int esNumericoFlotante(char str[]);
 int esNumerico(char str[]);
 int getFloat(float* pBuffer);
 int utn_getEntero(  int* pEntero, char* msg,char* msgErr,int min, int max);
