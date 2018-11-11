@@ -52,21 +52,48 @@ int main()
                 case 3:
                    // system("cls");
                     if(controller_addEmployee(listaEmpleados)){
-                        printf("\n\nLa carga del empleado fue exitosa...\n");
+                        printf("\nLa carga del empleado fue exitosa...\n");
                         system("pause");
                     }else{
                         printf("\nOcurrio un error y no se puedo agregar al empleado , volviendo al menu...\n");
                         system("pause");
                     }
                     break;
+                case 4:
+                    system("cls");
+                    if(controller_editEmployee(listaEmpleados))
+                    {
+                        printf("Empleado editado con exito con exito...\n");
+                        system("pause");
+                    }else{
+                        printf("No se encuentra el empleado o el ID no pertenece a ninguno...\n");
+                        system("pause");
+                    }
+                    break;
                 case 5:
-                    if
+                    system("cls");
+                    if(controller_removeEmployee(listaEmpleados))
+                    {
+                        printf("Empleado eliminado con exito...\n");
+                        system("pause");
+                    }else{
+                        printf("No se encuentra el empleado o el ID no pertenece a ninguno...\n");
+                        system("pause");
+                    }
+                    break;
                 case 6:
                     system("cls");
                     if(!(controller_ListEmployee(listaEmpleados))){
                         printf("Lista vacia cargar archivo o subir datos\n\n");
                     }
                     system("pause");
+                    break;
+                case 7:
+                    system("cls");
+                    if(controller_sortEmployee(listaEmpleados)){
+                        printf("\nOrdenado....\n");
+                        system("pause");
+                    }
                     break;
                 case 8:
                     if(controller_saveAsText("data1.csv",listaEmpleados)){

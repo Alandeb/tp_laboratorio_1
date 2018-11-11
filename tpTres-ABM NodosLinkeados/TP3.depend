@@ -155,3 +155,55 @@
 
 1541809627 c:\users\alan_\desktop\tp3dejajoder\tp3\win_64\parser.h
 
+1541900106 source:c:\users\alan_\desktop\tp3dejajoder\tp3\tptres-abm nodoslinkeados\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"controller.h"
+	"validaciones.h"
+
+1533133022 c:\users\alan_\desktop\tp3dejajoder\tp3\tptres-abm nodoslinkeados\linkedlist.h
+
+1541900150 c:\users\alan_\desktop\tp3dejajoder\tp3\tptres-abm nodoslinkeados\employee.h
+
+1541809627 c:\users\alan_\desktop\tp3dejajoder\tp3\tptres-abm nodoslinkeados\parser.h
+
+1541810745 c:\users\alan_\desktop\tp3dejajoder\tp3\tptres-abm nodoslinkeados\controller.h
+
+1541268846 c:\users\alan_\desktop\tp3dejajoder\tp3\tptres-abm nodoslinkeados\validaciones.h
+
+1541899984 source:c:\users\alan_\desktop\tp3dejajoder\tp3\tptres-abm nodoslinkeados\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"validaciones.h"
+
+1541808352 source:c:\users\alan_\desktop\tp3dejajoder\tp3\tptres-abm nodoslinkeados\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+	"LinkedList.h"
+	"Employee.h"
+
+1541861431 source:c:\users\alan_\desktop\tp3dejajoder\tp3\tptres-abm nodoslinkeados\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"LinkedList.h"
+	"Employee.h"
+	"validaciones.h"
+
+1541900263 source:c:\users\alan_\desktop\tp3dejajoder\tp3\tptres-abm nodoslinkeados\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"validaciones.h"
+	"Employee.h"
+	"controller.h"
+

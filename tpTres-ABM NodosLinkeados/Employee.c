@@ -72,11 +72,45 @@ int employee_getId(Employee* this,int* id)
     }
     return ok;
 }
+int employee_setNombre(Employee* this,char* nombre)
+{
+    int ok=0;
+    if(this!=NULL&&nombre!=NULL){
+        strcpy(this->nombre,nombre);
+        ok=1;
+    }
+    return ok;
+}
+int employee_getNombre(Employee* this,char* nombre)
+{
+    int ok=0;
+    if(this!=NULL&&nombre!=NULL){
+        strcpy(nombre,this->nombre);
+        ok=1;
+    }
+    return ok;
+}
+int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas){
+    int ok=0;
+    if(this!=NULL&&horasTrabajadas>0){
+        this->horasTrabajadas=horasTrabajadas;
+        ok=1;
+    }
+    return ok;
+}
 int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas)
 {
     int ok=0;
     if(this!=NULL&&horasTrabajadas!=NULL){
         *horasTrabajadas=this->horasTrabajadas;
+        ok=1;
+    }
+    return ok;
+}
+int employee_setSueldo(Employee* this,int sueldo){
+    int ok=0;
+    if(this!=NULL&&sueldo>0){
+        this->sueldo=sueldo;
         ok=1;
     }
     return ok;
@@ -90,31 +124,6 @@ int employee_getSueldo(Employee* this,int* sueldo)
     }
     return ok;
 }
-int employee_setNombre(Employee* this,char* nombre)
-{
-    int ok=0;
-    if(this!=NULL&&nombre!=NULL){
-        strcpy(this->nombre,nombre);
-        ok=1;
-    }
-    return ok;
-}
-int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas){
-    int ok=0;
-    if(this!=NULL&&horasTrabajadas>0){
-        this->horasTrabajadas=horasTrabajadas;
-        ok=1;
-    }
-    return ok;
-}
-int employee_setSueldo(Employee* this,int sueldo){
-    int ok=0;
-    if(this!=NULL&&sueldo>0){
-        this->sueldo=sueldo;
-        ok=1;
-    }
-    return ok;
-}
 void mostrarEmployee(Employee* emp){
     int id,sueldo,horasTrabajadas;
     char nombre[128];
@@ -122,6 +131,7 @@ void mostrarEmployee(Employee* emp){
         employee_getId(emp,&id);
         employee_getHorasTrabajadas(emp,&horasTrabajadas);
         employee_getSueldo(emp,&sueldo);
+        employee_getNombre(emp,nombre);
         printf("%d %15s %d   %d\n",id,nombre,horasTrabajadas,sueldo);
 
     }
@@ -134,6 +144,82 @@ void mostrarEmployees(LinkedList* lista){
         mostrarEmployee(p);
     }
 }
+int menu2(int* orden){
+    int opcion;
+    printf("***Ordenamiento***\n");
+    printf("\n1) Ordenar por id");
+    printf("\n2) Ordenar por nombre");
+    printf("\n3) Ordenar por horas trabajadas");
+    printf("\n4) Ordenar por sueldo");
+    utn_getEntero(&opcion,"\n\nSeleccione una opcion: ","ERROR Las opciones son de 1 a 4: ",1,4);
+    printf("\nColoque 0 para que sea Desendente");
+    printf("\nColoque 1 para que sea Ascendente");
+    utn_getEntero(orden,"\n\nDe que manera lo quiere ordenar: ","ENTRE 0 Y 1: ",0,1);
+    return opcion;
+}
+int employee_id(void* employeeA, void* employeeB)
+{
+    int retorno,idAux1,idAux2;
+    if(employeeA!=NULL&&employeeA!=NULL){
+        employee_getId(((Employee*)employeeA),&idAux1);
+        employee_getId(((Employee*)employeeB),&idAux2);
+        if(idAux1>idAux2){
+            retorno=1;
+        }
+        else if(idAux1<idAux2){
+            retorno=-1;
+        }
+        else{
+           retorno=0;
+        }
+    }
+    return retorno;
+}
+int employee_nombre(void* employeeA, void* employeeB)
+{
+    char nombre[2][128];
+    if(employeeA!=NULL&&employeeA!=NULL){
+        employee_getNombre(((Employee*)employeeA),nombre[0]);
+        employee_getNombre(((Employee*)employeeB),nombre[1]);
+    }
+    return strcmp(nombre[0],nombre[1]);
+}
 
+int employee_horasTrabajadas(void* employeeA, void* employeeB)
+{
+    int retorno=0,horasAux1,horasAux2;
+    if(employeeA!=NULL&&employeeB!=NULL){
+        employee_getHorasTrabajadas(((Employee*)employeeA),&horasAux1);
+        employee_getHorasTrabajadas(((Employee*)employeeB),&horasAux2);
+        if(horasAux1>horasAux2){
+            retorno = 1;
+        }
+        else if(horasAux1<horasAux2){
+            retorno = -1;
+        }
+        else{
+           retorno = 0;
+        }
+    }
+    return retorno;
+}
+int employee_sueldo(void* employeeA,void* employeeB)
+{
+    int retorno=0,sueldoAux1,sueldoAux2;
+    if(employeeA!=NULL&&employeeB!=NULL){
+        employee_getSueldo(((Employee*)employeeA),&sueldoAux1);
+        employee_getSueldo(((Employee*)employeeB),&sueldoAux2);
+        if(sueldoAux1>sueldoAux2){
+            retorno = 1;
+        }
+        else if(sueldoAux1<sueldoAux2){
+            retorno = -1;
+        }
+        else{
+           retorno = 0;
+        }
+    }
+    return retorno;
+}
 
 

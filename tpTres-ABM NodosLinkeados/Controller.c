@@ -84,7 +84,6 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
         utn_getEntero(&sueldoAux,"Sueldo del empleado: ","Sueldo entre 6000 y 250000: ",6000,250000);
         itoa(sueldoAux,buffer[2],10);
         auxEmployee=employee_newParametros(buffer[0],nombre,buffer[1],buffer[2]);
-
         if(auxEmployee != NULL){
             ll_add(pArrayListEmployee,auxEmployee);
             retorno=1;
@@ -102,7 +101,36 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_editEmployee(LinkedList* pArrayListEmployee)
 {
-    return 1;
+    char nombre[128];
+    int idAux,idAuxRemove,i,retorno=0,sueldoAux,horasAux,index;
+    Employee* auxEmployee=employee_new();
+    if(pArrayListEmployee != NULL&&auxEmployee!=NULL)
+    {
+        mostrarEmployees(pArrayListEmployee);
+        utn_getEntero(&idAuxRemove,"Ingrese el ID del empleado: ","ERROR los id van de 1 a 10000: ",1,10000);
+        for(i=0;i<ll_len(pArrayListEmployee);i++)
+        {
+            auxEmployee=(Employee*)ll_get(pArrayListEmployee,i);
+            if(employee_getId(auxEmployee,&idAux))
+            {
+                if(idAux==idAuxRemove)
+                {
+                    index=ll_indexOf(pArrayListEmployee,auxEmployee);
+                    printf("ID: %d\n",idAux);
+                    getStringLetras("Ingrese nuevo nombre del empleado: ","Error solo debe llevar letras: ",nombre);
+                    employee_setNombre(auxEmployee,nombre);
+                    utn_getEntero(&horasAux,"Horas trabajdas del empleado: ","Horas entre 40 y 500: ",40,500);
+                    employee_setHorasTrabajadas(auxEmployee,horasAux);
+                    utn_getEntero(&sueldoAux,"Sueldo del empleado: ","Sueldo entre 6000 y 250000: ",6000,250000);
+                    employee_setSueldo(auxEmployee,sueldoAux);
+                    ll_set(pArrayListEmployee,index,auxEmployee);
+                    retorno=1;
+                    break;
+                }
+            }
+        }
+    }
+    return retorno;
 }
 
 /** \brief Baja de empleado
@@ -116,15 +144,15 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 {
 
     int idAux,idAuxRemove,i,retorno=0;
-    Employee* empAux = employee_new();
-    if(pArrayListEmployee != NULL&&empAux!=NULL)
+    Employee* auxEmployee=employee_new();
+    if(pArrayListEmployee != NULL&&auxEmployee!=NULL)
     {
         mostrarEmployees(pArrayListEmployee);
-        utn_getEntero(&idAuxRemove,"Ingrese el ID del empleado que desea eliminar: ","ERROR los id van de 1 a 10000",1,10000);
+        utn_getEntero(&idAuxRemove,"Ingrese el ID del empleado: ","ERROR los id van de 1 a 10000: ",1,10000);
         for(i=0;i<ll_len(pArrayListEmployee);i++)
         {
-            empAux=(Employee*)ll_get(pArrayListEmployee,i);
-            if(employee_getId(empAux,&idAux))
+            auxEmployee=(Employee*)ll_get(pArrayListEmployee,i);
+            if(employee_getId(auxEmployee,&idAux))
             {
                 if(idAux==idAuxRemove)
                 {
@@ -171,7 +199,33 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
-    return 1;
+    int opcion,retorno,orden;
+    if(pArrayListEmployee == NULL){
+        printf("No hay datos en la lista.\n");
+    }
+    else
+    {
+        opcion=menu2(&orden);
+        switch(opcion){
+        case 1:
+            ll_sort(pArrayListEmployee,employee_id,orden);
+            retorno=1;
+            break;
+        case 2:
+            ll_sort(pArrayListEmployee,employee_nombre,orden);
+            retorno=1;
+            break;
+        case 3:
+            ll_sort(pArrayListEmployee,employee_horasTrabajadas,orden);
+            retorno=1;
+            break;
+        case 4:
+            ll_sort(pArrayListEmployee,employee_sueldo,orden);
+            retorno=1;
+            break;
+        }
+    }
+    return retorno;
 }
 
 /** \brief Guarda los datos de los empleados en el archivo data.csv (modo texto).

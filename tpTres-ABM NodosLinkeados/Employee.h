@@ -27,4 +27,10 @@ int employee_getSueldo(Employee* this,int* sueldo);
 void mostrarEmployee(Employee* emp);
 void mostrarEmployees(LinkedList* lista);
 int menu();
+int menu2(int* orden);
+int employee_id(void* employeeA, void* employeeB);
+int employee_nombre(void* employeeA, void* employeeB);
+int employee_horasTrabajadas(void* employeeA, void* employeeB);
+int employee_sueldo(void* employeeA,void* employeeB);
+
 #endif // employee_H_INCLUDED
